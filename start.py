@@ -3,11 +3,15 @@ import re
 import requests
 
 # Set up your API key
-PEXELS_API_KEY = ''
+PEXELS_API_KEY = '  '                           #ENTER your PEXEL API KEY
 HEADERS = {'Authorization': PEXELS_API_KEY}
 DOWNLOAD_FOLDER = 'downloads'
 
 # Your single input string with numbered prompts
+
+# each prompt must be either spearated by commas or
+# be preceded with a number with a dot and a space  e.g. "1. MAN WALKING IN FOREST"
+
 input_string = """
 
 Burned warrior standing in ruins, portrait vertical,
@@ -81,4 +85,5 @@ def search_and_download(prompt_num, prompt, media_type='image', count=1):
 # Run the bot
 prompts = parse_prompts(input_string)
 for num, prompt in enumerate(prompts):
-    search_and_download(num, prompt, media_type='video', count=3)  # You can change 'image' to 'video'
+    search_and_download(num, prompt, media_type='video', count=3)  # You can change 'image' to 'video' , 
+                                                                    #change count to number of images you wanna generate
